@@ -5,10 +5,15 @@ import { useContext } from "react";
 
 const CartButton = (props) => {
   const context = useContext(CartContext);
+  console.log(context, "context");
 
   const numberOfItem = context.items.reduce((currentNumber, item) => {
     return currentNumber + item.amount;
   }, 0);
+
+  console.log(numberOfItem, "amount");
+  console.log(props);
+
   return (
     <button className={style.button} onClick={props.onClick}>
       <span className={style.icon}>
