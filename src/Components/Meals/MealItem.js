@@ -4,17 +4,20 @@ import CartContext from "../Store/Cart-context";
 import { useContext } from "react";
 
 const MealItem = (props) => {
-  const crtCntx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
 
   const price = `$${props.price.toFixed(2)}`;
   const addToCartHandler = (amount) => {
-    crtCntx.addItem({
+    cartCtx.addItem({
       id: props.id,
       name: props.name,
       amount: amount,
       price: props.price,
     });
   };
+
+  // console.log(cartCtx.totalAmount);
+
   return (
     <li className={classes.meal}>
       <div>
