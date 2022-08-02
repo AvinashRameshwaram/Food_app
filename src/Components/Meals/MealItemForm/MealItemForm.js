@@ -6,26 +6,26 @@ const MealItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
 
-  const submitEventHandler = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
 
     const enteredAmount = amountInputRef.current.value;
-    const enteredNumber = +enteredAmount;
-    console.log(amountInputRef.current.value);
+    const enteredAmountNumber = +enteredAmount;
 
     if (
       enteredAmount.trim().length === 0 ||
-      enteredNumber < 1 ||
-      enteredNumber > 5
+      enteredAmountNumber < 1 ||
+      enteredAmountNumber > 5
     ) {
       setAmountIsValid(false);
       return;
     }
-    props.onAddToCart(enteredNumber);
+
+    props.onAddToCart(enteredAmountNumber);
   };
 
   return (
-    <form className={style.form} onSubmit={submitEventHandler}>
+    <form className={style.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -38,8 +38,8 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>Add To cart</button>
-      {!amountIsValid && <p>Please add a valid amount between 1 to 5</p>}
+      <button>+ Add</button>
+      {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
     </form>
   );
 };

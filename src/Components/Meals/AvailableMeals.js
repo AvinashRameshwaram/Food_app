@@ -39,6 +39,7 @@ const AvailableMeals = () => {
       price={meal.price}
     />
   ));
+
   return (
     <section className={style.meals}>
       <Card>

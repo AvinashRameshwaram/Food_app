@@ -6,11 +6,11 @@ const Header = (props) => {
   return (
     <>
       <header className={style.header}>
-        <h1>Meals</h1>
+        <h1>ReactMeals</h1>
         <CartButton onClick={props.onShowCart} />
       </header>
       <div className={style["main-image"]}>
-        <img src={meals} alt="food logo" />
+        <img src={meals} alt="A table full of delicious food!" />
       </div>
     </>
   );
