@@ -3,17 +3,16 @@ import Input from "../../../Components/UI/Input/Input";
 import { useRef, useState } from "react";
 
 const MealItemForm = (props) => {
-  // console.log(props);
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
 
   const submitEventHandler = (event) => {
     event.preventDefault();
 
-    console.log(props.onAddToCart);
-
     const enteredAmount = amountInputRef.current.value;
     const enteredNumber = +enteredAmount;
+    console.log(amountInputRef.current.value);
+
     if (
       enteredAmount.trim().length === 0 ||
       enteredNumber < 1 ||

@@ -3,7 +3,6 @@ import style from "../Layout/Header.module.css";
 import CartButton from "./CartButton";
 
 const Header = (props) => {
-  // console.log(props);
   return (
     <>
       <header className={style.header}>

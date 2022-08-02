@@ -16,8 +16,6 @@ const MealItem = (props) => {
     });
   };
 
-  // console.log(cartCtx.totalAmount);
-
   return (
     <li className={classes.meal}>
       <div>
